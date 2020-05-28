@@ -13,6 +13,12 @@ class UserRepository
         return user;
     }
 
+    async loginCheck(email: string, password: string){
+        const user = await this.userCollection.find({email: email, password: password});
+
+        return user;
+    }
+
     async insert(user: User) {
         const { $id } = await this.userCollection.insertOne(user);
 

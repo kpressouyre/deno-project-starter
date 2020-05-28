@@ -4,7 +4,7 @@ import { getUsers, createUser } from "../controllers/UserController.ts";
 const userRouter = new Router({prefix: '/user'});
 
 userRouter
-  .get("", getUsers)
-  .post("", createUser);
+  .get("/", getUsers)
+  .post("/", createUser);
 
 export default userRouter;

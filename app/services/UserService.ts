@@ -11,6 +11,10 @@ class UserService
     return await this.userRepository.findAll();
   };
 
+  loginCheck = async (email: string, password: string) => {
+    return await this.userRepository.loginCheck(email, password);
+  }
+
   createUser = async (user: User) => {
     return await this.userRepository.insert(user);
   };
