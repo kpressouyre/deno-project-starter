@@ -19,7 +19,7 @@ services:
         restart: always
         networks:
             - app-network
-        command: sh -c "/home/deno/app/wait-for.sh deno-project-starter_db_1:27017 && deno run --allow-net /home/deno/app/server.ts"
+        command: sh -c "/home/deno/app/wait-for.sh deno-project-starter_db_1:27017 && deno run --allow-net --allow-write --allow-read --allow-plugin --allow-env --unstable /home/deno/app/server.ts"
 
     db:
         image: mongo:4.1.8-xenial
